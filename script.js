@@ -5,11 +5,11 @@ function enterSite() {
   document.getElementById("bgMusic").play();
 
   startSlider();
+  revealOnScroll();
 }
 
-/* IMAGE SLIDER */
+/* SLIDER */
 let index = 0;
-
 function startSlider() {
   const slides = document.querySelectorAll(".slide");
 
@@ -18,4 +18,18 @@ function startSlider() {
     index = (index + 1) % slides.length;
     slides[index].classList.add("active");
   }, 3000);
-}  
+}
+
+/* SCROLL ANIMATION */
+function revealOnScroll() {
+  const elements = document.querySelectorAll(".fade-in");
+
+  window.addEventListener("scroll", () => {
+    elements.forEach(el => {
+      const top = el.getBoundingClientRect().top;
+      if (top < window.innerHeight - 100) {
+        el.classList.add("show");
+      }
+    });
+  });
+}
