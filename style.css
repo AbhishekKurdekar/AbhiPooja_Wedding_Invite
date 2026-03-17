@@ -1,15 +1,15 @@
 body {
   margin: 0;
-  font-family: 'Georgia', serif;
-  background: linear-gradient(to bottom, #5e2b97, #f5e6cc);
-  color: #fff;
-  text-align: center;
+  font-family: 'Cinzel', serif;
+  background: linear-gradient(180deg, #3d0066, #f5e6cc);
+  color: white;
+  overflow-x: hidden;
 }
 
-/* OPENING SCREEN */
+/* OPENING */
 #opening {
   height: 100vh;
-  background: #6a0dad;
+  background: radial-gradient(circle, #6a0dad, #2b003d);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -17,16 +17,22 @@ body {
 }
 
 .ganesha {
-  width: 200px;
+  width: 220px;
   animation: zoomIn 2s ease;
 }
 
+.sanskrit {
+  font-family: 'Great Vibes', cursive;
+  font-size: 32px;
+  margin: 20px;
+}
+
 button {
-  padding: 10px 20px;
+  padding: 12px 25px;
   font-size: 18px;
   background: gold;
   border: none;
-  border-radius: 10px;
+  border-radius: 25px;
   cursor: pointer;
 }
 
@@ -35,9 +41,27 @@ button {
   display: none;
 }
 
+/* 🛕 TEMPLE HEADER */
+.temple-header {
+  height: 120px;
+  background: url('https://i.imgur.com/6Iej2c3.png') repeat-x;
+  background-size: contain;
+  animation: slideTemple 20s linear infinite;
+}
+
 /* HERO */
 .hero {
-  padding: 50px;
+  padding: 60px 20px;
+}
+
+.names {
+  font-size: 48px;
+  font-family: 'Great Vibes', cursive;
+  color: gold;
+}
+
+.tagline {
+  font-size: 18px;
 }
 
 /* SLIDER */
@@ -48,6 +72,7 @@ button {
 .slide {
   width: 100%;
   display: none;
+  border-radius: 15px;
 }
 
 .slide.active {
@@ -58,37 +83,57 @@ button {
 /* VIDEO */
 video {
   width: 80%;
-  margin: 20px;
   border-radius: 15px;
+  margin: 20px;
 }
 
 /* EVENTS */
 .events {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .card {
   background: #ffffffdd;
-  color: #000;
-  padding: 20px;
-  margin: 10px;
-  border-radius: 15px;
-  width: 250px;
-  transition: transform 0.3s;
+  color: black;
+  margin: 15px;
+  padding: 25px;
+  border-radius: 20px;
+  width: 260px;
+  transition: 0.4s;
 }
 
 .card:hover {
-  transform: scale(1.05);
+  transform: translateY(-10px) scale(1.05);
 }
 
-/* THANK YOU */
-.thankyou {
-  padding: 40px;
+/* FAMILY */
+.family {
+  padding: 50px;
 }
 
-/* ANIMATION */
+/* 🌸 FLOATING FLOWERS */
+body::before {
+  content: "🌸 🌼 🌸";
+  position: fixed;
+  top: 0;
+  width: 100%;
+  animation: floatFlowers 10s linear infinite;
+}
+
+/* ANIMATIONS */
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 1s;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 @keyframes zoomIn {
   from { transform: scale(0); }
   to { transform: scale(1); }
@@ -99,10 +144,12 @@ video {
   to { opacity: 1; }
 }
 
-/* PRINT STYLE */
-@media print {
-  body {
-    background: #fff;
-    color: #000;
-  }
+@keyframes floatFlowers {
+  from { transform: translateY(-100px); }
+  to { transform: translateY(100vh); }
+}
+
+@keyframes slideTemple {
+  from { background-position-x: 0; }
+  to { background-position-x: 1000px; }
 }
