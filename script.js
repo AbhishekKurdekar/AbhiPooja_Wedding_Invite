@@ -4,17 +4,15 @@ function enterSite() {
 
   document.getElementById("bgMusic").play();
 
-  revealOnScroll();
+  reveal();
 }
 
-/* SCROLL ANIMATION */
-function revealOnScroll() {
-  const elements = document.querySelectorAll(".fade-in");
+function reveal() {
+  const els = document.querySelectorAll(".fade-in");
 
   window.addEventListener("scroll", () => {
-    elements.forEach(el => {
-      const top = el.getBoundingClientRect().top;
-      if (top < window.innerHeight - 100) {
+    els.forEach(el => {
+      if (el.getBoundingClientRect().top < window.innerHeight - 100) {
         el.classList.add("show");
       }
     });
