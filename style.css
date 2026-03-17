@@ -1,0 +1,108 @@
+body {
+  margin: 0;
+  font-family: 'Georgia', serif;
+  background: linear-gradient(to bottom, #5e2b97, #f5e6cc);
+  color: #fff;
+  text-align: center;
+}
+
+/* OPENING SCREEN */
+#opening {
+  height: 100vh;
+  background: #6a0dad;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.ganesha {
+  width: 200px;
+  animation: zoomIn 2s ease;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 18px;
+  background: gold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* MAIN */
+#main {
+  display: none;
+}
+
+/* HERO */
+.hero {
+  padding: 50px;
+}
+
+/* SLIDER */
+.slider {
+  position: relative;
+}
+
+.slide {
+  width: 100%;
+  display: none;
+}
+
+.slide.active {
+  display: block;
+  animation: fade 2s;
+}
+
+/* VIDEO */
+video {
+  width: 80%;
+  margin: 20px;
+  border-radius: 15px;
+}
+
+/* EVENTS */
+.events {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  background: #ffffffdd;
+  color: #000;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 15px;
+  width: 250px;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+/* THANK YOU */
+.thankyou {
+  padding: 40px;
+}
+
+/* ANIMATION */
+@keyframes zoomIn {
+  from { transform: scale(0); }
+  to { transform: scale(1); }
+}
+
+@keyframes fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* PRINT STYLE */
+@media print {
+  body {
+    background: #fff;
+    color: #000;
+  }
+}
